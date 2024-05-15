@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TedxGpcet</title>
+    <link rel="icon" href="images/favicon1.png">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Inter, sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            background: rgb(0, 0, 0);
+            height: 97px;
+            align-content: center;
+            width: 100%;
+            z-index: 99;
+        }
+
+        nav .logo {
+            height: 60px;
+            width: 200px;
+            position: absolute;
+            left: 6%;
+            top: 20px;
+            background: url(images/tedx\ logo.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        nav ul {
+            float: right;
+            margin-right: 20px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: 0.15s ease-in-out;
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        a.active,
+        a:hover {
+            background: red;
+            transition: .5s;
+        }
+
+        a {
+            padding: 2px 4px;
+        }
+
+        .openmenu {
+            font-size: 30px;
+            color: rgb(255, 255, 255);
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .btn {
+            font-size: 27px;
+            font-weight: bold;
+            color: white;
+            border: none;
+            background-color: red;
+            border-radius: 7px;
+            padding: 6px 7px;
+        }
+
+        .btn:hover {
+            background-color: black;
+            border: solid rgb(255, 255, 255) 2px;
+        }
+
+        #check {
+            display: none;
+        }
+
+        main {
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        main::after {
+            content: "Transcendent Ripples";
+            position: absolute;
+            top: 50%;
+            left: -100%;
+            transition: all .5s;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            z-index: 1;
+        }
+        main:hover::after{left: 49%;}
+
+        .hero{
+            height: 100vh;
+            background-image: url(images/jodhpur.jpg);
+            overflow: hidden;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .about {
+            background-color: rgb(0, 0, 0);
+            height: 100vh;
+            z-index: 0;
+        }
+
+        @media (max-width: 1093px) {
+            .openmenu {
+                display: block;
+            }
+
+            .btn {
+                font-size: 16px;
+            }
+
+            ul {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background: rgba(187, 99, 99, 0.326);
+                backdrop-filter: blur(10px);
+                top: 80px;
+                left: -100%;
+                transition: all .5s;
+                text-align: center;
+            }
+
+            #check:checked~ul {
+                left: 0;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+
+            nav ul li a {
+                position: relative;
+                font-size: 20px;
+            }
+
+            a:hover,
+            a.active {
+                background: none;
+                color: red
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo"></div>
+        <input type="checkbox" id="check">
+        <label for="check" class="openmenu">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Speakers</a></li>
+            <li><a href="#">Performers</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a><button class="btn">Get Tickets</button></a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="hero"></section>
+    </main>
+    <section class="about">
+        <div class="buttons">
+            <button class="btn" id="ted">Ted</button>
+            <button class="btn" id="tedx">Tedx</button>
+            <button class="btn" id="tedxGpcet">TedxGpcet</button>
+        </div>
+    </section>
+</body>
+
+</html>
